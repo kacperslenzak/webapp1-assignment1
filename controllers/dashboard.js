@@ -8,11 +8,11 @@ const dashboard = {
         logger.info("Dashboard page loading!");
 
         const viewData = {
-            title: "Playlist App Dashboard",
+            title: "Movie Tracker App Dashboard",
             movieCatalogue: movieStore.getCatalogue()
         };
 
-        logger.debug(viewData.playlists);
+        logger.debug(viewData.movieCatalogue);
 
         response.render('dashboard', viewData);
     },

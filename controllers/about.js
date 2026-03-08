@@ -7,9 +7,9 @@ import appStore from "../models/app-store.js";
 const about = {
     createView(request, response) {
         const viewData = {
-            title: "Welcome to the Playlist app!",
-            moviesInfo: movieStore.getMoviesInfo(),
-            info: appStore.getAppInfo()
+            title: "Welcome to the the movie tracker app!",
+            moviesInfo: movieStore.getMoviesInfo(), // we pass movie info to have stats about collections
+            info: appStore.getAppInfo() // app info for title, version, etc
         };
 
         logger.debug(viewData);

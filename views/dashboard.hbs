@@ -2,7 +2,7 @@
 
 <section class="ui center aligned middle aligned segment">
   
-  <h2>Playlist App Dashboard</h2>
+  <h2>Movie Tracker App Dashboard</h2>
   
   {{#unless movieCatalogue}}
     <h3 class="ui message">
@@ -17,7 +17,7 @@
           <div class="header">{{title}}</div>
         </div>
         <div class="extra content">
-          <a href="/movie/{{id}}" class="ui primary button">View Now</a>
+          <a href="/movie/{{id}}" class="ui primary button">View Now <i class="eye icon" style="margin-left: 4px;"></i></a>
         </div>
       </div>
     {{/each}}

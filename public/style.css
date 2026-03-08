@@ -39,6 +39,11 @@ nav .item:hover {
   transition: all .3s ease;
 }
 
+nav .item.active {
+  background-color: #f5c517 !important;
+  color: black !important;
+}
+
 section.segment {
   background-color: #f5c517 !important;
   color: white !important;

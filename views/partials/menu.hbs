@@ -13,5 +13,9 @@
 </nav>
 
 <script>
- document.querySelector("#{{id}}").classList.add("active");
+  const id = "{{id}}";
+  if(id !== "") { // stops error on homepage as no id is passed
+    const element = document.querySelector("#{{id}}");
+    element.classList.add("active");
+  }
 </script>
