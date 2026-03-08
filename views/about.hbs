@@ -1,0 +1,68 @@
+{{> menu id="about"}}
+
+<section class="ui left aligned middle aligned segment">
+
+    <h2>About the Movie Tracker</h2>
+    <p>
+        More information about the app
+    </p>
+
+    <p>{{moviesInfo.moviesCount}} movies in {{moviesInfo.collectionsCount}} collections</p>
+
+</section>
+
+<section class="ui center aligned middle aligned segment">
+  
+  {{> appstats}}
+
+</section>
+
+<section class="ui segment">
+  <div class="ui stackable two column grid middle aligned">
+
+    <!-- Left Column: Contact Info -->
+    <div class="column">
+      <h3 class="ui header">Contact Us</h3>
+
+      <div class="ui list">
+        <div class="item">
+          <i class="map marker alternate icon"></i>
+          <div class="content">
+            Wexford, Ireland
+          </div>
+        </div>
+
+        <div class="item">
+          <i class="phone icon"></i>
+          <div class="content">
+            +353 83 123 4567
+          </div>
+        </div>
+
+        <div class="item">
+          <i class="mail icon"></i>
+          <div class="content">
+            kacper@slenzak.com
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Column: Google Maps -->
+    <div class="column">
+      <div class="ui fluid embed">
+        <!-- Replace with your Google Maps iframe -->
+        <iframe
+          src="https://www.google.com/maps?q=Wexford&output=embed"
+          width="100%"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>

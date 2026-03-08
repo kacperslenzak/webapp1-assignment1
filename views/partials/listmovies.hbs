@@ -1,0 +1,31 @@
+{{#if movieCollection.movies}}
+
+  <table class="ui unstackable striped table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Director</th>
+        <th>Release Year</th>
+        <th>Genre</th>
+        <th>Rating (/10)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each movieCollection.movies}}
+        <tr>
+          <td>{{title}}</td>
+          <td>{{director}}</td>
+          <td>{{year}}</td>
+          <td>{{genre}}</td>
+          <td>{{rating}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  {{else}}
+    <h3 class="ui message">
+      Empty movie collection!
+    </h3>
+
+{{/if}}

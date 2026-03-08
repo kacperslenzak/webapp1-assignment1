@@ -1,0 +1,26 @@
+{{> menu id="dashboard"}}
+
+<section class="ui center aligned middle aligned segment">
+  
+  <h2>Playlist App Dashboard</h2>
+  
+  {{#unless movieCatalogue}}
+    <h3 class="ui message">
+      Movie catalogue is empty!
+    </h3>
+  {{/unless}}
+
+  <div class="ui equal height centered cards">
+    {{#each movieCatalogue}}
+      <div class="card">
+        <div class="content">
+          <div class="header">{{title}}</div>
+        </div>
+        <div class="extra content">
+          <a href="/movie/{{id}}" class="ui primary button">View Now</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+</section>

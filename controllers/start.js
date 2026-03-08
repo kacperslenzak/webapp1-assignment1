@@ -8,7 +8,7 @@ const start = {
     logger.info("Start page loading!");
     
     const viewData = {
-      title: "CA1 Starter App",
+      title: "The Movie Tracker",
       info: appStore.getAppInfo()
     };
     
