@@ -1,4 +1,4 @@
-{{#if movieCollection.movies}}
+{{#if movies}}
 
   <table class="ui unstackable striped table">
     <thead>
@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each movieCollection.movies}}
+      {{#each movies}}
         <tr>
           <td>{{title}}</td>
           <td>{{director}}</td>
@@ -24,7 +24,7 @@
   </table>
 
   {{else}}
-    <h3 class="ui message">
+    <h3 class="ui message black">
       Empty movie collection!
     </h3>
 

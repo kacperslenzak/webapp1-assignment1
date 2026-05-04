@@ -1,5 +1,6 @@
 {{> menu}}
 
+{{#with movieCollection}}
 <section class="ui center aligned middle aligned segment">
   <h2 class="ui header">
     {{movieCollection.title}}
@@ -8,3 +9,4 @@
 
   <a href="/dashboard" class="ui primary button"><i class="angle double left icon"></i>Return To Dashboard</i></a>{{#if nextId}}<a href="{{nextId}}" class="ui primary button">Next Collection <i class="angle double right icon"></i></a>{{/if}}
 </section>
+{{/with}}
