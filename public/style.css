@@ -44,7 +44,7 @@ nav .item.active {
   color: black !important;
 }
 
-section.segment {
+section.segment, .ui.segment {
   background-color: #f5c517 !important;
   color: white !important;
 }

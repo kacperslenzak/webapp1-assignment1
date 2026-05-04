@@ -12,6 +12,10 @@ const movieStore = {
     this.store.addItem(this.collection, id, this.array, movie);
   },
 
+  addCollection(collection) {
+    this.store.addCollection(this.collection, collection);
+  },
+
   getAllMovieCollections() {
     return this.store.findAll(this.collection);
   },
@@ -41,7 +45,7 @@ const movieStore = {
         largestCollection = collectionMovieCount;
       }
 
-      if(collectionMovieCount < smallestCollection) {
+      if (collectionMovieCount < smallestCollection) {
         smallestCollection = collectionMovieCount;
       }
     }
