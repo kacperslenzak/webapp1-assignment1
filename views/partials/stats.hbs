@@ -1,0 +1,55 @@
+{{#with stats}}
+<div class="ui center aligned grid">
+
+    <div class="ui sixteen wide column">
+
+        <div class="ui centered five statistics">
+            <div class="ui statistic">
+                <div class="value">
+                    <i class="file video icon"></i>
+                </div>
+                <div class="label">
+                    {{collectionsCount}} movie colletions
+                </div>
+            </div>
+
+            <div class="ui purple statistic">
+                <div class="value">
+                    <i class="video icon"></i>
+                </div>
+                <div class="label">
+                    {{moviesCount}} songs
+                </div>
+            </div>
+
+            <div class="ui blue statistic">
+                <div class="value">
+                    <i class="balance scale icon"></i>
+                </div>
+                <div class="label">
+                    Average movies per <br> collection: {{average}}
+                </div>
+            </div>
+
+            <div class="ui green statistic">
+                <div class="value">
+                    <i class="angle up icon"></i>
+                </div>
+                <div class="label">
+                    Collection with <br> most movies: {{largestCollection}}
+                </div>
+            </div>
+
+            <div class="ui red statistic">
+                <div class="value">
+                    <i class="angle down icon"></i>
+                </div>
+                <div class="label">
+                    Collection with <br> least movies: {{smallestCollection}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/with}}

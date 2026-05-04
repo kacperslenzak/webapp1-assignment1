@@ -27,12 +27,21 @@ const movieStore = {
     const allMovies = this.store.findAll(this.collection); // length of this is amount of collections
 
     let moviesCount = 0;
+    let largestCollection = allMovies[0].movies.length;
+    let smallestCollection = allMovies[0].movies.length;
     for (let i = 0; i < allMovies.length; i++) { // simple loop to count movies
-      moviesCount = moviesCount + allMovies[i].movies.length;
+      let collectionMovieCount = allMovies[i].movies.length;
+      moviesCount = moviesCount + collectionMovieCount;
+      if (collectionMovieCount > largestCollection) {
+        largestCollection = collectionMovieCount;
+      }
+
+      if(collectionMovieCount < smallestCollection) {
+        smallestCollection = collectionMovieCount;
+      }
     }
 
-    
-    return { moviesCount, collectionsCount: allMovies.length };
+    return { moviesCount, collectionsCount: allMovies.length, largestCollection, smallestCollection };
   },
 
   getCollectionIds() {
