@@ -9,10 +9,13 @@ const accounts = {
 
   //index function to render index page
   index(request, response) {
-    const viewData = {
-      title: 'Login or Signup',
-    };
-    response.render('index', viewData);
+    const loggedInUser = accounts.getCurrentUser(request);
+    if(!loggedInUser) {
+      const viewData = {
+        title: 'Login or Signup',
+      };
+      response.render('index', viewData);
+    } else response.redirect('/start');
   },
   
   //login function to render login page
