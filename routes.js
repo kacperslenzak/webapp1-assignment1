@@ -25,5 +25,6 @@ router.post('/dashboard/addcollection', dashboard.addCollection);
 // Movie
 router.get('/movie/:id', movie.createView);
 router.post('/movie/:id/addmovie', movie.addMovie);
+router.get('/movie/:id/deletemovie/:movieid', movie.deleteMovie);
 
 export default router;

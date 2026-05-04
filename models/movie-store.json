@@ -19,30 +19,6 @@
           "year": "2014",
           "genre": "Sci-Fi",
           "rating": 10
-        },
-        {
-          "id": "03",
-          "title": "The Dark Knight",
-          "director": "Christopher Nolan",
-          "year": "2008",
-          "genre": "Action",
-          "rating": 10
-        },
-        {
-          "id": "04",
-          "title": "Memento",
-          "director": "Christopher Nolan",
-          "year": "2000",
-          "genre": "Thriller",
-          "rating": 9
-        },
-        {
-          "id": "05",
-          "title": "Dunkirk",
-          "director": "Christopher Nolan",
-          "year": "2017",
-          "genre": "War",
-          "rating": 8
         }
       ]
     },

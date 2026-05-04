@@ -41,6 +41,14 @@ const movie = {
     movieStore.addMovie(collectionId, newMovie);
     response.redirect('/movie/' + collectionId);
   },
+
+  deleteMovie(request, response) {
+    const collectionId = request.params.id;
+    const movieId = request.params.movieid;
+    logger.debug(`Deleting Song  $(movieId} from collection ${collectionId}`);
+    movieStore.removeMovie(collectionId, movieId);
+    response.redirect('/movie/' + collectionId);
+  },
 };
 
 export default movie;
