@@ -20,6 +20,11 @@ const movieStore = {
     this.store.addCollection(this.collection, collection);
   },
 
+  removeCollection(id) {
+    const collection = this.getMovieCollection(id);
+    this.store.removeCollection(this.collection, collection);
+  },
+
   getAllMovieCollections() {
     return this.store.findAll(this.collection);
   },

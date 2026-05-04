@@ -27,6 +27,14 @@ const dashboard = {
         movieStore.addCollection(newCollection);
         response.redirect('/dashboard');
     },
+
+    deleteCollection(request, response) {
+        const collectionId = request.params.id;
+        logger.debug(`Deleting collection ${collectionId}`);
+        movieStore.removeCollection(collectionId);
+        response.redirect("/dashboard");
+    },
+
 };
 
 export default dashboard;

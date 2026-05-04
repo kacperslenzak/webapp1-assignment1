@@ -21,6 +21,7 @@ router.get('/about', about.createView);
 // Dashboard
 router.get('/dashboard', dashboard.createView);
 router.post('/dashboard/addcollection', dashboard.addCollection);
+router.get('/dashboard/deletecollection/:id', dashboard.deleteCollection);
 
 // Movie
 router.get('/movie/:id', movie.createView);
