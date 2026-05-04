@@ -2,26 +2,30 @@
 import logger from "../utils/logger.js";
 import movieStore from "../models/movie-store.js";
 import appStore from "../models/app-store.js";
+import accounts from './accounts.js';
 
 const stats = {
     createView(request, response) {
+        const loggedInUser = accounts.getCurrentUser(request);
         logger.info("Stats page loading!");
 
-        const moviesInfo = movieStore.getMoviesInfo();
+        if(loggedInUser) {
+            const moviesInfo = movieStore.getMoviesInfo();
 
-        let average = moviesInfo.collectionsCount > 0 ? (moviesInfo.moviesCount / moviesInfo.collectionsCount).toFixed(2) : 0;
+            let average = moviesInfo.collectionsCount > 0 ? (moviesInfo.moviesCount / moviesInfo.collectionsCount).toFixed(2) : 0;
 
-        const info = appStore.getAppInfo()
+            const info = appStore.getAppInfo()
 
-        const stats = { ...moviesInfo, average };
+            const stats = { ...moviesInfo, average };
 
-        const viewData = {
-            title: "Movie Tracker App Statistics",
-            stats: stats, 
-            info: info
-        };
+            const viewData = {
+                title: "Movie Tracker App Statistics",
+                stats: stats, 
+                info: info
+            };
 
-        response.render("stats", viewData);
+            response.render("stats", viewData);
+        } else response.redirect('/');
     },
 };
 

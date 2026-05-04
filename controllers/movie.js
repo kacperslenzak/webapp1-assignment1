@@ -3,11 +3,13 @@
 import logger from '../utils/logger.js';
 import movieStore from '../models/movie-store.js';
 import { v4 as uuidv4 } from 'uuid';
+import accounts from './accounts.js';
 
 const movie = {
   createView(request, response) {
     logger.info('Movie page loading!');
     const collectionId = request.params.id;
+    const loggedInUser = accounts.getCurrentUser(request);
     logger.debug(`Movie id = ${collectionId}`);
 
     const movieCollectionIds = movieStore.getCollectionIds();
@@ -21,7 +23,8 @@ const movie = {
     const viewData = {
       title: 'Movie',
       movieCollection: movieStore.getMovieCollection(collectionId),
-      nextId: nextId
+      nextId: nextId,
+      fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
     };
 
     response.render('movie', viewData);
@@ -34,7 +37,7 @@ const movie = {
       id: uuidv4(),
       title: request.body.title,
       director: request.body.director,
-      releaseYear: request.body.releaseYear,
+      year: request.body.releaseYear,
       genre: request.body.genre,
       rating: request.body.rating
     };

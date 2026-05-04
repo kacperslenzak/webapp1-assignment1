@@ -12,9 +12,10 @@ import dashboard from './controllers/dashboard.js';
 import movie from './controllers/movie.js';
 import about from './controllers/about.js';
 import stats from './controllers/stats.js';
+import accounts from './controllers/accounts.js';
 
 // Start
-router.get('/', start.createView);
+router.get('/start', start.createView);
 
 // About
 router.get('/about', about.createView);
@@ -34,5 +35,14 @@ router.post('/movie/:id/updatemovie/:movieid', movie.updateMovie);
 
 // Stats
 router.get('/stats', stats.createView);
+
+//auth
+router.get('/', accounts.index);
+router.get('/login', accounts.login);
+router.get('/signup', accounts.signup);
+router.get('/logout', accounts.logout);
+router.post('/register', accounts.register);
+router.post('/authenticate', accounts.authenticate);
+
 
 export default router;

@@ -35,6 +35,16 @@ const movieStore = {
       (collection => collection.title.toLowerCase().includes(search.toLowerCase())))
   },
 
+  getUserCollections(userid) {
+    return this.store.findBy(this.collection, (collection => collection.userid === userid));
+  },
+
+  searchUserCollections(search, userid) {
+    return this.store.findBy(
+      this.collection,
+      (collection => collection.userid === userid && collection.title.toLowerCase().includes(search.toLowerCase())))
+  },
+
   getAllMovieCollections() {
     return this.store.findAll(this.collection);
   },
