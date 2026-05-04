@@ -4,3 +4,5 @@ console.log(`
  > ^ <
 `);
 console.log('Leave this alone please! Belongs to 20118217 :D');
+
+$('.ui.rating').rating('disable');

@@ -29,6 +29,12 @@ const movieStore = {
     this.store.removeCollection(this.collection, collection);
   },
 
+  searchCollection(search) {
+    return this.store.findBy(
+      this.collection,
+      (collection => collection.title.toLowerCase().includes(search.toLowerCase())))
+  },
+
   getAllMovieCollections() {
     return this.store.findAll(this.collection);
   },

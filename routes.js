@@ -23,6 +23,8 @@ router.get('/about', about.createView);
 router.get('/dashboard', dashboard.createView);
 router.post('/dashboard/addcollection', dashboard.addCollection);
 router.get('/dashboard/deletecollection/:id', dashboard.deleteCollection);
+router.get('/searchCategory', dashboard.createView);
+router.get('/sortData', dashboard.createView);
 
 // Movie
 router.get('/movie/:id', movie.createView);
