@@ -11,6 +11,7 @@ import start from './controllers/start.js';
 import dashboard from './controllers/dashboard.js';
 import movie from './controllers/movie.js';
 import about from './controllers/about.js';
+import stats from './controllers/stats.js';
 
 // Start
 router.get('/', start.createView);
@@ -28,5 +29,8 @@ router.get('/movie/:id', movie.createView);
 router.post('/movie/:id/addmovie', movie.addMovie);
 router.get('/movie/:id/deletemovie/:movieid', movie.deleteMovie);
 router.post('/movie/:id/updatemovie/:movieid', movie.updateMovie);
+
+// Stats
+router.get('/stats', stats.createView);
 
 export default router;
