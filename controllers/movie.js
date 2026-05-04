@@ -49,6 +49,23 @@ const movie = {
     movieStore.removeMovie(collectionId, movieId);
     response.redirect('/movie/' + collectionId);
   },
+
+  updateMovie(request, response) {
+    const collectionId = request.params.id;
+    const movieId = request.params.movieid;
+    logger.debug("updating movie " + movieId);
+    const updatedMovie = {
+      id: movieId,
+      title: request.body.title,
+      director: request.body.director,
+      year: request.body.releaseYear,
+      genre: request.body.genre,
+      rating: request.body.rating
+    };
+    movieStore.editMovie(collectionId, movieId, updatedMovie);
+    response.redirect('/movie/' + collectionId);
+  }
+
 };
 
 export default movie;

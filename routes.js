@@ -27,5 +27,6 @@ router.get('/dashboard/deletecollection/:id', dashboard.deleteCollection);
 router.get('/movie/:id', movie.createView);
 router.post('/movie/:id/addmovie', movie.addMovie);
 router.get('/movie/:id/deletemovie/:movieid', movie.deleteMovie);
+router.post('/movie/:id/updatemovie/:movieid', movie.updateMovie);
 
 export default router;

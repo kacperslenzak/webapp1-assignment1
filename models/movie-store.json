@@ -14,11 +14,11 @@
         },
         {
           "id": "02",
-          "title": "Interstellar",
+          "title": "Inception",
           "director": "Christopher Nolan",
-          "year": "2014",
+          "year": "2012",
           "genre": "Sci-Fi",
-          "rating": 10
+          "rating": "9"
         }
       ]
     },
@@ -216,9 +216,9 @@
           "id": "27",
           "title": "The Social Network",
           "director": "David Fincher",
-          "year": "2010",
+          "year": "2012",
           "genre": "Drama",
-          "rating": 8
+          "rating": "8"
         }
       ]
     },

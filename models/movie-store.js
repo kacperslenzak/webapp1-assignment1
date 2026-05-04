@@ -16,6 +16,10 @@ const movieStore = {
     this.store.removeItem(this.collection, id, this.array, movieId);
   },
 
+  editMovie(id, movieId, updatedMovie) {
+    this.store.editItem(this.collection, id, movieId, this.array, updatedMovie);
+  },
+
   addCollection(collection) {
     this.store.addCollection(this.collection, collection);
   },

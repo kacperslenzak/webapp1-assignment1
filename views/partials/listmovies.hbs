@@ -3,27 +3,59 @@
 <table class="ui unstackable striped table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Director</th>
-      <th>Release Year</th>
-      <th>Genre</th>
-      <th>Rating (/10)</th>
+      <th class="four wide">Title</th>
+      <th class="four wide">Director</th>
+      <th class="two wide">Release Year</th>
+      <th class="two wide">Genre</th>
+      <th class="two wide">Rating (/10)</th>
     </tr>
   </thead>
   <tbody>
     {{#each movies}}
-    <tr>
-      <td>{{title}}</td>
-      <td>{{director}}</td>
-      <td>{{year}}</td>
-      <td>{{genre}}</td>
-      <td>{{rating}}</td>
-      <td class="center aligned">
-        <a href="/movie/{{../id}}/deletemovie/{{id}}" title="Delete movie">
-          <i class="ui black trash icon"></i>
-        </a>
-      </td>
-    </tr>
+    <form class="ui stacked segment form" action="/movie/{{../id}}/updatemovie/{{id}}" method="POST" style="display: contents;">
+      <tr class="fields">
+        <td class="field">
+          <span class="ui input">
+            <input type="text" name="title" autofocus required title="Please include a valid Title" placeholder="Title"
+              value="{{title}}">
+          </span>
+        </td>
+        <td class="field">
+          <span class="ui input">
+            <input type="text" name="director" required title="Please include a valid Director" placeholder="Director"
+              value="{{director}}">
+          </span>
+        </td>
+        <td class="field">
+          <span class="ui input">
+            <input type="number" name="releaseYear" required title="Please include a valid Year" placeholder="Year"
+              value="{{year}}">
+          </span>
+        </td>
+        <td class="field">
+          <span class="ui input">
+            <input type="text" name="genre" required title="Please include a valid Genre" placeholder="Genre"
+              value="{{genre}}">
+          </span>
+        </td>
+        <td class="field">
+          <span class="ui input">
+            <input type="number" name="rating" min="1" max="10" required title="Please include a valid Rating"
+              placeholder="Rating" value="{{rating}}">
+          </span>
+        </td>
+        <td class="center aligned">
+          <button type="submit" class="editSubmit">
+            <i class="ui pencil icon"></i>
+          </button>
+        </td>
+        <td class="center aligned">
+          <a href="/movie/{{../id}}/deletemovie/{{id}}" title="Delete movie">
+            <i class="ui black trash icon"></i>
+          </a>
+        </td>
+      </tr>
+    </form>
     {{/each}}
   </tbody>
 </table>
