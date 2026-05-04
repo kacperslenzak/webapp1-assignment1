@@ -82,6 +82,10 @@ const movieStore = {
   getMoviesInfo() { // returns amount of movies in total and amount of collections
     const allMovies = this.store.findAll(this.collection); // length of this is amount of collections
 
+    if (allMovies.length === 0) {
+      return { moviesCount: 0, collectionsCount: 0, largestCollection: 0, smallestCollection: 0 };
+    }
+
     let moviesCount = 0;
     let largestCollection = allMovies[0].movies.length;
     let smallestCollection = allMovies[0].movies.length;
