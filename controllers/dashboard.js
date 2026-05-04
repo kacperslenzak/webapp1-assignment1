@@ -67,15 +67,17 @@ const dashboard = {
             movies: [],
             date: timestamp
         };
-        movieStore.addCollection(newCollection);
-        response.redirect('/dashboard');
+        movieStore.addCollection(newCollection, request.files.picture, function() {
+            response.redirect("/dashboard");
+        });
     },
 
     deleteCollection(request, response) {
         const collectionId = request.params.id;
         logger.debug(`Deleting collection ${collectionId}`);
-        movieStore.removeCollection(collectionId);
-        response.redirect("/dashboard");
+        movieStore.removeCollection(collectionId, function() {
+            response.redirect("/dashboard");
+        }); 
     },
 
 };

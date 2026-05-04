@@ -1,28 +1,3 @@
 {
-  "movieCollection": [
-    {
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "id": "34668b51-cc0a-48c9-b011-a9c69fa1eb2f",
-      "title": "Test collection",
-      "movies": [
-        {
-          "id": "3dc31b0b-49fc-460b-84c2-e4bbcedd5ccd",
-          "title": "Awesome movie",
-          "director": "awesome director",
-          "year": "2020",
-          "genre": "Action",
-          "rating": "2"
-        },
-        {
-          "id": "9fab8ba3-4059-4b52-87c9-7a4ba045d790",
-          "title": "lol",
-          "director": "lol",
-          "year": "2020",
-          "genre": "adventure",
-          "rating": "2"
-        }
-      ],
-      "date": "2026-05-04T22:20:27.557Z"
-    }
-  ]
+  "movieCollection": []
 }

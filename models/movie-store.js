@@ -20,13 +20,31 @@ const movieStore = {
     this.store.editItem(this.collection, id, movieId, this.array, updatedMovie);
   },
 
-  addCollection(collection) {
-    this.store.addCollection(this.collection, collection);
+  async addCollection(collection, file, response) {
+    try {
+      collection.picture = await this.store.addToCloudinary(file);
+      this.store.addCollection(this.collection, collection);
+      response();
+    } catch (error) {
+      logger.error("Error processing collection:", error);
+      response(error);
+    }
   },
 
-  removeCollection(id) {
+  async removeCollection(id, response) {
     const collection = this.getMovieCollection(id);
+
+    if (collection.picture && collection.picture.public_id) {
+      try {
+        await this.store.deleteFromCloudinary(collection.picture.public_id);
+        logger.info("Cloudinary image deleted");
+      } catch (err) {
+        logger.error("Failed to delete Cloudinary image:", err);
+      }
+    }
+
     this.store.removeCollection(this.collection, collection);
+    response();
   },
 
   searchCollection(search) {

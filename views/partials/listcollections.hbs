@@ -32,7 +32,7 @@
 
     {{#unless search}}
     {{#unless movieCatalogue}}
-    <h3 class="ui message">
+    <h3 class="ui message" style="color: black !important;">
         Movie catalogue is empty!
     </h3>
     {{/unless}}
@@ -41,6 +41,9 @@
     <div class="ui equal height centered cards">
         {{#each movieCatalogue}}
         <div class="card">
+            <div class="image">
+                <img src="{{picture.url}}">
+            </div>
             <div class="content">
                 <div class="header">{{title}}</div>
                 <div class="meta">Movie Count: {{movies.length}}</div>
