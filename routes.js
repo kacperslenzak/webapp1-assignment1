@@ -17,4 +17,6 @@ router.get('/dashboard', dashboard.createView);
 router.get('/movie/:id', movie.createView);
 router.get('/about', about.createView);
 
+router.post('/movie/:id/addmovie', movie.addMovie);
+
 export default router;

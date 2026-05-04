@@ -6,6 +6,11 @@ import JsonStore from './json-store.js';
 const movieStore = {
   store: new JsonStore('./models/movie-store.json', { movieCollection: [] }),
   collection: 'movieCollection',
+  array: 'movies',
+
+  addMovie(id, movie) {
+    this.store.addItem(this.collection, id, this.array, movie);
+  },
 
   getAllMovieCollections() {
     return this.store.findAll(this.collection);
